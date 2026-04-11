@@ -33,8 +33,8 @@ modules:
 
   - type: containerfile
     snippets:
-      - RUN grubby --update-kernel=ALL --args="nowatchdog random.trust_cpu=on console=tty0 quiet splash rhgb rd.udev.log_priority=3 vt.global_cursor_default=0 systemd.show_status=auto"
-      - RUN mkdir -p /etc/flatpak/remotes.d && \
+      - RUN dnf install -y curl && \
+            mkdir -p /etc/flatpak/remotes.d && \
             curl -L https://dl.flathub.org/repo/flathub.flatpakrepo -o /etc/flatpak/remotes.d/flathub.flatpakrepo
 
   - type: systemd
