@@ -1,0 +1,15 @@
+[Unit]
+Description=Instala Flatpaks Essenciais no Primeiro Boot
+# 
+Wants=network-online.target
+After=network-online.target dbus.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/install-flatpaks.sh
+#
+TimeoutSec=10min
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
