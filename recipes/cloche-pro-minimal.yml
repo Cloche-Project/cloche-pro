@@ -9,7 +9,7 @@ modules:
     snippets:
       - RUN dnf install -y epel-release && dnf config-manager --set-enabled crb
       - RUN dnf upgrade -y
-      - RUN useradd -G wheel -p '$6$CARQCg8vB3/aeGNE$UflWEmXw5MMr9Z0lG6OHudKXc.AYGFozzNIO0XwVxzDF2ppfBcPdlya0RT9zNWTU7wBMk/TfAPWSBs2DPtpwS1' user
+      #- RUN useradd -G wheel -p '$6$CARQCg8vB3/aeGNE$UflWEmXw5MMr9Z0lG6OHudKXc.AYGFozzNIO0XwVxzDF2ppfBcPdlya0RT9zNWTU7wBMk/TfAPWSBs2DPtpwS1' user
 
   - type: os-release
     properties:
@@ -28,7 +28,7 @@ modules:
 
   - type: containerfile
     snippets:
-      - RUN echo 'd /var/home/user 0700 user user - -' > /usr/lib/tmpfiles.d/user-home.conf
+      #- RUN echo 'd /var/home/user 0700 user user - -' > /usr/lib/tmpfiles.d/user-home.conf
       - RUN sed -i 's/enabled=1/enabled=0/g' /etc/dnf/plugins/subscription-manager.conf
 
   #- type: systemd
