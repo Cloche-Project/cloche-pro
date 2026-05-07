@@ -31,8 +31,9 @@ modules:
       #- RUN echo 'd /var/home/user 0700 user user - -' > /usr/lib/tmpfiles.d/user-home.conf
       - RUN sed -i 's/enabled=1/enabled=0/g' /etc/dnf/plugins/subscription-manager.conf
 
-  #- type: systemd
-    #system:
-      #enabled:
+  - type: systemd
+    system:
+      enabled:
+        - bootc-fetch-apply-updates.timer
         #- gdm.service
         #- NetworkManager.service
