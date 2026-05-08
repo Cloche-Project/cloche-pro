@@ -18,7 +18,7 @@ modules:
 
   - type: containerfile
     snippets:
-      - RUN dnf install -y --allowerasing --nobest "@Workstation" gdm cockpit git distrobox btop curl gnome-tweaks gnome-shell-extension-dash-to-panel gnome-shell-extension-blur-my-shell gnome-shell-extension-caffeine plymouth-plugin-script && dnf clean all
+      - RUN dnf install -y --allowerasing --nobest "@Workstation" tuned tuned-ppd gdm cockpit git distrobox btop curl gnome-shell-extension-dash-to-panel gnome-shell-extension-blur-my-shell gnome-shell-extension-caffeine plymouth-plugin-script && dnf clean all
 
   - type: files
     files:
@@ -45,4 +45,4 @@ modules:
         - gdm.service
         - NetworkManager.service
         - first-boot-flatpaks.service
-        - power-profiles-daemon.service
+        - tuned.service
