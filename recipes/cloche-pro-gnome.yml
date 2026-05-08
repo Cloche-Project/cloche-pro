@@ -35,8 +35,9 @@ modules:
     snippets:
       - RUN grubby --update-kernel=ALL --args="nowatchdog random.trust_cpu=on console=tty0 quiet splash rhgb rd.udev.log_priority=3 vt.global_cursor_default=0 systemd.show_status=auto"
       - RUN dnf install -y curl && mkdir -p /etc/flatpak/remotes.d && curl -L https://dl.flathub.org/repo/flathub.flatpakrepo -o /etc/flatpak/remotes.d/flathub.flatpakrepo
-      - RUN echo '%wheel ALL=(ALL) NOPASSWD: /usr/bin/bootc' > /etc/sudoers.d/99-bootc-nopasswd
-      - RUN chmod 0440 /etc/sudoers.d/99-bootc-nopasswd
+      - "RUN echo '%wheel ALL=(ALL) NOPASSWD: /usr/bin/bootc' > /etc/sudoers.d/99-bootc-nopasswd"
+      - "RUN chmod 0440 /etc/sudoers.d/99-bootc-nopasswd"
+      - RUN glib-compile-schemas /usr/share/glib-2.0/schemas/
 
   - type: systemd
     system:
@@ -44,3 +45,4 @@ modules:
         - gdm.service
         - NetworkManager.service
         - first-boot-flatpaks.service
+        - power-profiles-daemon.service
