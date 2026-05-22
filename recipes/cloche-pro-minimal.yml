@@ -7,9 +7,10 @@ modules:
 
   - type: containerfile
     snippets:
-      - RUN dnf install -y epel-release && dnf config-manager --set-enabled crb
-      - RUN dnf upgrade -y
-      #- RUN useradd -G wheel -p '$6$CARQCg8vB3/aeGNE$UflWEmXw5MMr9Z0lG6OHudKXc.AYGFozzNIO0XwVxzDF2ppfBcPdlya0RT9zNWTU7wBMk/TfAPWSBs2DPtpwS1' user
+      - |
+        RUN dnf install -y epel-release && dnf config-manager --set-enabled crb && \
+        dnf upgrade -y && \
+        dnf clean all
 
   - type: os-release
     properties:
