@@ -9,6 +9,6 @@ flatpak update --appstream -y
 
 # install apps. 
 # on exit code 0(sucessfull activation) the script ends sucesfully.
-if flatpak install -y system flathub com.vscodium.codium org.gnome.Calculator org.gnome.TextEditor org.gnome.baobab org.gnome.Evince; then
+if flatpak install -y --system flathub com.vscodium.codium org.gnome.Calculator org.gnome.TextEditor org.gnome.baobab org.gnome.Evince com.mattjakeman.ExtensionManager; then
   systemctl disable first-boot-flatpaks.service
 fi

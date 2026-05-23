@@ -28,7 +28,8 @@ jobs:
         recipe:
           # !! Add your recipes here
           - cloche-pro-minimal.yml
-          - cloche-pro-gnome.yml
+          - cloche-pro-workstation-gnome.yml
+          - cloche-pro-workstation-plasma.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

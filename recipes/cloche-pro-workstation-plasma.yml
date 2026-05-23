@@ -1,5 +1,5 @@
-name: cloche-pro-gnome
-description: "Cloche PRO Workstation (GNOME)"
+name: cloche-pro-workstation-plasma
+description: "Cloche PRO Workstation (PLASMA)"
 
 base-image: ghcr.io/augustofmarques/cloche-pro
 image-version: latest
@@ -18,19 +18,15 @@ modules:
 
   - type: containerfile
     snippets:
+      - RUN dnf install -y @KDE --exclude=plasma-workspace-wallpapers && dnf clean all
       - |
         RUN dnf install -y --allowerasing --nobest \
-          "@Workstation" \
           tuned \
           tuned-ppd \
-          gdm \
           cockpit \
           git \
           distrobox \
           btop \
-          gnome-shell-extension-dash-to-panel \
-          gnome-shell-extension-blur-my-shell \
-          gnome-shell-extension-caffeine \
           plymouth-plugin-script && \
           dnf clean all
       - RUN mkdir -p /etc/flatpak/remotes.d && curl -L https://dl.flathub.org/repo/flathub.flatpakrepo -o /etc/flatpak/remotes.d/flathub.flatpakrepo
@@ -45,9 +41,9 @@ modules:
       - source: system/etc
         destination: /etc
 
-  - type: script
-    scripts:
-      - setup-cloche-pro-gnome.sh
+  #- type: script
+    #scripts:
+      #- setup-cloche-pro-plasma.sh
 
   - type: kargs
     kargs:
@@ -64,7 +60,7 @@ modules:
   - type: systemd
     system:
       enabled:
-        - gdm.service
+        - sddm.service
         - NetworkManager.service
         - first-boot-flatpaks.service
         - tuned.service
