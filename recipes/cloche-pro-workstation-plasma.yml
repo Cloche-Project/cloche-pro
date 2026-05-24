@@ -16,13 +16,13 @@ modules:
       SUPPORT_URL: https://github.com/augustofmarques/cloche
       DEFAULT_HOSTNAME: cloche
 
+  #tuned-ppd has been removed from the second RUN dnf install due to a known SELinux bug dealing with tuned-ppd specifically.
   - type: containerfile
     snippets:
       - RUN dnf install -y @KDE --exclude=plasma-workspace-wallpapers && dnf clean all
       - |
         RUN dnf install -y --allowerasing --nobest \
           tuned \
-          tuned-ppd \
           cockpit \
           git \
           distrobox \
