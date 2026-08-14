@@ -11,6 +11,10 @@ modules:
         RUN dnf install -y epel-release && dnf config-manager --set-enabled crb && \
         dnf upgrade -y && \
         dnf clean all
+      - |
+        RUN dnf install -y --allowerasing --nobest \
+          cargo && \
+          dnf clean all
 
   - type: os-release
     properties:
