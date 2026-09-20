@@ -56,10 +56,7 @@ show-battery-percentage=false
 accent-color='blue'
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-software', 'org-gnome-ptyxis', 'gnome-power-panel', 'gnome-about-panel', 'org-mozilla-firefox', 'io-github-pol-rivero-github-desktop-plus', 'dev-zed-zed']
-
-[org/gnome/desktop/notifications/application/dev-zed-zed]
-application-id='dev.zed.Zed.desktop'
+application-children=['org-gnome-software', 'org-gnome-ptyxis', 'gnome-power-panel', 'gnome-about-panel', 'org-mozilla-firefox']
 
 [org/gnome/desktop/notifications/application/gnome-about-panel]
 application-id='gnome-about-panel.desktop'

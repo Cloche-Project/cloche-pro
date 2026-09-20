@@ -191,9 +191,7 @@ knownItems=org.kde.kdeconnect,org.kde.plasma.battery,org.kde.plasma.bluetooth,or
 AppletOrder=3;4;5;28;21;27;6;7;22
 
 [Containments][29]
-ItemGeometries-1920x1080=
-ItemGeometriesHorizontal=
-activityId=4c977550-2aa8-46bb-9090-22eefac0f680
+activityId=
 formfactor=0
 immutability=1
 lastScreen=0
@@ -205,13 +203,5 @@ wallpaperplugin=org.kde.image
 DialogHeight=691
 DialogWidth=1361
 
-[Containments][29][General]
-positions={"1920x1080":[]}
-
 [Containments][29][Wallpaper][org.kde.image][General]
-Image=file:///usr/share/wallpapers/Altai/
-SlidePaths=/usr/share/wallpapers/
-
-[ScreenMapping]
-itemsOnDisabledScreens=
-screenMapping=
+Image=file:///usr/share/wallpapers/Cloche-Default/

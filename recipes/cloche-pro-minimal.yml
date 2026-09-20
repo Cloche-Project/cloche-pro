@@ -21,7 +21,7 @@ modules:
     properties:
       #ID: cloche-pro
       NAME: Cloche PRO
-      PRETTY_NAME: Cloche PRO 10
+      PRETTY_NAME: Cloche PRO 10 (Lunar Slate)
       HOME_URL: https://github.com/augustofmarques/cloche
       BUG_REPORT_URL: https://github.com/augustofmarques/cloche/issues
       SUPPORT_URL: https://github.com/augustofmarques/cloche
